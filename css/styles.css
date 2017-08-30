@@ -1,0 +1,162 @@
+/*
+==============================
+Set up
+==============================
+*/
+
+
+*,
+*:before,
+*:after {
+ 	margin: 0;
+ 	padding: 0;
+  	border: 0;
+  	font: inherit;
+  	overflow-x: hidden;
+  	font-size: 100%;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+==============================
+Box Positioning
+==============================
+*/
+
+body {
+}
+
+.main-box {
+}
+
+
+.content-bar {
+	padding: 0.5% 0;
+}
+
+.back {
+	position: absolute;
+	z-index: -1;
+}
+
+li img {
+	height: 52px;
+}
+
+/*
+==============================
+Main
+==============================
+*/
+
+#main-logo {
+	background-color: #fff;
+	width: 10%;
+	height: auto;
+	margin: 0 1%;
+	position: absolute;
+	top: 1%;
+	border-radius: 50%;
+	border: 2px solid maroon;
+	opacity: 0.9;
+}
+
+section img {
+	width: 100%;
+	height: auto;
+}
+
+.banner {
+}
+
+.banner.ban-left {
+	width: 80%;
+	float: left;
+}
+
+.banner.ban-right {
+	position: relative;
+	width: 20%;
+	float: right;
+}
+
+.ban-right {
+	padding: 7% 2.5% 15% 2.5%;
+	overflow-y: hidden;
+}
+
+.ban-left.back {
+	width: 80%;
+	height: auto;
+	top: 10%;
+}
+
+.ban-right.back {
+	bottom: -1%;
+}
+
+/*
+==============================
+Lists
+==============================
+*/
+
+ul.link-list li {
+	margin: auto 2.5%;
+	padding: 1% 0;
+	display: inline-block;
+}
+
+.left.link-list li {
+	float: left;
+}
+
+.right.link-list li {
+	float: right;
+}
+
+
+
+/*
+==============================
+Typography
+==============================
+*/
+
+
+* {
+	font-family: 'Crimson Text', serif;
+}
+
+li {
+	color: maroon;
+	font: bold 30px 'Oswald', sans-serif;
+	text-transform: uppercase;
+}
+
+#learn-more {
+	font-size: 15px;
+}
+
+
+
+/*
+==============================
+Float fix
+==============================
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  clear: both;
+  *zoom: 1;
+}
