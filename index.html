@@ -4,7 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Oswald" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald|Quicksand" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 	<title>SASE</title>
 </head>
 
@@ -12,81 +15,103 @@
 
 	<!-- Header -->
 
-	<header class="content-bar">
+	<header class="main content-bar">
 
-		<img id="main-logo" src="img/icons/sase-logo.png">
+		<a href="index.html">
+			<img class="main" id="main-logo" src="img/icons/sase-logo-text-white.png" alt="SASE Logo">
+		</a>
 
 		<nav class="primary-nav">
-			<ul class="link-list right clearfix">
-				<li>Contact Us</li>
-				<li>Gallery</li>
-				<li>Members</li>
-				<li>Calendar</li>
-				<li>About</li>
+			<ul class="main link-list right clearfix">
+				<li><a href="contact.html">Contact Us</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="members.html">Members</a></li>
+				<li><a href="calendar.html">Calendar</a></li>
+				<li><a href="index.html">About</a></li>
 			</ul>
 		</nav>
 		
 	</header>
 
-	<!-- Banner -->
+	<!-- Entire Banner -->
 
-	<section class="main-box clearfix">
-
-		<!-- Banner-Left-Front (Slide Left) -->
+	<section class="main main-box index clearfix">
 
 		<section class="banner ban-left">
 
-			<section class="ban-left front">
-				<img src="img/sase-main-banner-1.png">
-			</section>
+			<a id="arrow-left" class="arrow btn"> 
+				<img id="arrow-change" src="img/icons/arrow-left.png">
+			</a> 
+
+			<!-- Banner Left Back -->
 
 			<section class="ban-left back">
-				Video Here
+				<iframe id="video" class="" src="https://www.youtube.com/embed/JC21_yDC0xk" frameborder="0" allowfullscreen></iframe>
+			</section>
+
+			<!-- Banner-Left-Front -->
+
+			<section class="ban-left front">
+				<img id="main-ban" src="img/sase-main-banner-1.png" alt="be SASSY">
 			</section>
 
 		</section>
 
-		<!-- Banner-Right -->
 
 		<section class="banner ban-right">
+
+			<!-- Banner-Right Front -->
+
 			<section class="ban-right front">
+
 				<article>
-					<p>
-						SASE helps Asian-heritage scientific and engineering professionals achieve their full potential through activities such as networking, panel discussions, company visits, and lectures.
+					<h1 id="title-intro">
+						What we do.
+					</h1>
+					<br>
+					<p id="right-text">
+						SASE helps Asian-heritage scientific and engineering professionals achieve their full potential through activities such as networking, panel discussions, company visits, and lectures. Our mission is to prepare our members for success in the global business world, celebrate diversity on campuses and in the workplace, and provide opportunities for members to make contributions to their local communities.
 					</p>
 				</article>
+
 			</section>
 
-			<a id="learn-more">Learn More</a>
+			<a id="learn-more" class="arrow btn"><img src="img/icons/arrow-down.png"></a>
 
-			<section class="ban-right back">
-				<article>
-
-					<h2>Who We Are</h2>
-
-					<p>
-						The Society of Asian Scientists and Engineers (SASE) is a nonprofit professional organization founded in 2007 with the goal of providing Asian heritage scientists and engineers with opportunities for professional and personal advancement. The SASE community is made up of collegiate and professional members dedicated to celebrating diversity, reaching their full potential, and giving back to the community. Learn more at saseconnect.org.
-					</p>
-				</article>
-			</section>
 		</section>
-
 
 	</section>
 
 	<!-- Footer -->
 
-	<footer class="content-bar">
+	<footer class="main-footbar content-bar">
 		
 		<ul class="link-list left clearfix">
-			<li id="bu-logo"><img src="img/icons/bu-logo.gif">bu</li>
-			<li>fb</li>
-			<li>ig</li>
-			<li>tw</li>
-			<li>ss</li>
+			<li id="bu-logo">
+				<img src="img/icons/bu-logo.gif">
+			</li>
+			<li>
+				<a href="http://facebook.com/sasebuchapter" target="_blank">
+					<img src="img/icons/fb.png">Facebook
+				</a>
+			</li>
+			<li>
+				<a href="http://instagram.com/BU_SASE" target="_blank">
+					<img src="img/icons/ig.jpg">Instagram
+				</a>
+			</li>
+			<li>
+				<a href="http://twitter.com/BU_SASE" target="_blank">
+					<img src="img/icons/tw.jpg">Twitter
+				</a>
+			</li>
+			<li id="sase-site" class="centered">
+				<a href="http://saseconnect.org" target="_blank">
+					<img src="img/icons/sase-small.png">SASE
+				</a>
+			</li>
+			<small>Website by Jinghu Lei ---</small>
 		</ul>
-
-		<small>Website by Jinghu Lei - 2017</small>
 	</footer>
 
 </body>
