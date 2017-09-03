@@ -579,10 +579,14 @@ Contact
 }
 
 .contact.main-box {
-	background-color: rgba(49,180,224, 1);
+	background: linear-gradient(rgba(128,0,0, 0.3),rgba(128,0,0, 0.3)),
+					url('../img/campus-1.jpg') ;
+
+	background-size: cover;
+	align-items: center;
 	flex-wrap: wrap;
-	align-items: flex-start;
 	margin: 0;
+	min-height: 800px;
 	padding: 0;
 }
 
@@ -596,76 +600,15 @@ Contact
 
 
 .left.social {
-	max-width: 20%;
-	min-width: 15%;
-	flex-basis: 50%;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
+	margin: 0 auto;
 }
 
-.link-list#social-list {
-	flex-direction: column;
-	justify-content: flex-start;
-	max-height: 10%;
-	margin-bottom: 80%;
-}
-
-.link-list#social-list a {
-	display: block;
-	flex-shrink: 2;
-	max-height: 10px;
-	width: auto;
-}
-
-.link-list#social-list a.changeHeight {
-	max-height: 200px;
-}
-
-.link-list#social-list a img {
-	display: block;
-	height: 100%;
-	width: 100%;
-}
-
-.link-list#social-list a img.changeHeight {
-	width: auto;
-	height: 215px;
-}
-
-.link-list#social-list a img.changeHeight2 {
-	width: 328.15px;
-	height: auto;
-}
-
-#join-us {
-	margin: 40px 20px;
+#join-us, article.description {
+	margin: auto;
 	padding: 20px 0;
 	border: 5px dashed white;
 	border-width: 5px 0;
-}
-
-#loc-img {
-	display: block;
-	flex-grow: 2;
-	flex-basis: 50%;
-}
-
-#loc-img img{
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-article.description {
-	margin: 50px auto;
-	padding: 20px;
-	border: 5px dashed white;
-	border-width: 5px 0;
-}
-
-article.description p {
-	max-width: 300px;
+	min-height: 600px;
 }
 
 a#feedback-btn {

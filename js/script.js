@@ -51,7 +51,6 @@ function main(){
 
 			$('#event-box').css('float', 'none');
 			$('.list-title').css('margin-top', '40px');
-			$('article.description p').css('max-width', '800px');
 		}
 	};
 
@@ -74,24 +73,20 @@ function main(){
 	moveBanner();
 	notFull();
 
+
+	var numImages = 12;
+	var srcs =[];
+
+
 	var href = document.location.href;
 	var lastPathSegment = href.substr(href.lastIndexOf('/') + 1);
-	var srcs = ["img/group-photo.jpg", "img/sase-main-banner-1.png", "img/sase-main-banner.png", "img/sase-main-banner-2.png", "img/sase-main-banner-3.png"];
 	if (lastPathSegment === 'gallery.html') {
-		var dir = "img/featured/";
-		var fileextension = ".jpg";
-		$.ajax({
-		    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-		    url: dir,
-		    success: function (data) {
-	        	//List all .jpg file names in the page
-	       		$(data).find("a:contains(" + fileextension + ")").each(function () {
-		            var filename = this.href.replace(window.location.host, "").replace("http://", "").replace(window.location, "");
-		            srcs.push(dir + filename);
-		            $("#img-gallery").append("<img src='" + dir + filename + "\' class=\'imgs\'>");
-	    		});
-			}
-		});
+		var path = 'img/featured/';
+
+		for(var i=0; i < numImages; i++){
+			$("#img-gallery").append("<img src=\'" + path + i + '.jpg' + "\' class=\'imgs\'>");
+			srcs.push(path+ i + '.jpg');
+		}
 	}
 
 	$(window).resize(function () {
@@ -108,7 +103,6 @@ function main(){
 			$('#cal-cont').css('width', '1380px').css('border-left', '10px solid white');	
 			$('#event-box').css('float', 'left');
 			$('.list-title').css('margin-top', '10%');
-			$('article.description p').css('max-width', '300px');
 		}
 		notFull();
 	});
@@ -189,16 +183,6 @@ function main(){
 
 	$(document).on('click', '.zoom', function() {
 		$('.zoom').remove();
-	});
-
-	$('.left.social .link-list#social-list a').hover(function() {
-		$('.link-list#social-list').toggleClass('absolute');
-		$('.left.social .link-list#social-list a').toggleClass('changeHeight');
-		if($(window).width() < 1903){
-			$('.link-list#social-list a img').toggleClass('changeHeight2');
-		} else {
-			$('.link-list#social-list a img').toggleClass('changeHeight');
-		}
 	});
 };
 
