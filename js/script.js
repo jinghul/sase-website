@@ -20,20 +20,19 @@ function main(){
 		$('iframe#video').css('height', newVidHeight).css('width', newVidWidth);
 
 		//members
-		var imgHeight = $("#members tbody tr td").children('img').height();
+		var imgHeight = $("#members tbody tr td a").children('img').height();
 		var ratio = imgHeight/380;
 
-		var currImgHeight = '' + ($("#members tbody tr td").children('img').width() + 6) + 'px';
+		var currImgHeight = '' + ($("#members tbody tr td a").children('img').width() + 6) + 'px';
 		var newBorderSize = "" + (ratio * 15) + "px 3px";
 		var newAHeight = "" + (imgHeight + 10) + "px";
 		var newPadTop = "" + (ratio * 20) + "px";
 		var newFontSize = "" + (ratio * 1.5* 50) + "px";
 		var newFontSize1 = "" + (ratio * 1.5 * 30) + "px";
 		var newFontSize2 = "" + (ratio * 1.3 * 60) + "px";
-		$("#members tbody tr td").children('article').css('height', newAHeight).css('width', currImgHeight).css('padding-top', newPadTop).css('border-width', newBorderSize);
-		$("#members tbody tr td").children('article').children('h2').css('font-size', newFontSize);
-		$("#members tbody tr td").children('article').children('h3').css('font-size', newFontSize1);
-		//$("#members caption h1").css('font-size', newFontSize2);
+		$("#members tbody tr td a").children('article').css('height', newAHeight).css('width', currImgHeight).css('padding-top', newPadTop).css('border-width', newBorderSize);
+		$("#members tbody tr td a").children('article').children('h2').css('font-size', newFontSize);
+		$("#members tbody tr td a").children('article').children('h3').css('font-size', newFontSize1);
 
 	};
 
@@ -55,9 +54,9 @@ function main(){
 	};
 
 	var isFull = function() {
-		$("#members tbody tr td").children('article').stop(true, true);
+		$("#members tbody tr td a").children('article').stop(true, true);
 		moveBanner();
-		$("#members tbody tr td").children('article').hide();
+		$("#members tbody tr td a").children('article').hide();
 		if (!($(window).width() < 1903)) {
 			$ban.css('max-width', '1500px');
 			$('.main-box.main').css('background-position','-410px 0');
@@ -74,7 +73,7 @@ function main(){
 	notFull();
 
 
-	var numImages = 12;
+	var numImages = 7;
 	var srcs =[];
 
 
@@ -84,7 +83,6 @@ function main(){
 		var path = 'img/featured/';
 
 		for(var i=0; i < numImages; i++){
-			$("#img-gallery").append("<img src=\'" + path + i + '.jpg' + "\' class=\'imgs\'>");
 			srcs.push(path+ i + '.jpg');
 		}
 	}
@@ -92,7 +90,7 @@ function main(){
 	$(window).resize(function () {
 		var apos = '' + ($head.height() + $ban.height()/2 - $arrow.height()/2)+ "px";
 		$arrow.hide().css('top', apos).fadeIn(300);
-		$("#members tbody tr td").children('article').hide().stop(true, true);
+		$("#members tbody tr td a").children('article').hide().stop(true, true);
 		moveBanner();
 		if (!($(window).width() < 1903)) {
 			$ban.css('max-width', '1500px');
@@ -151,12 +149,13 @@ function main(){
 	});
 
 
-	$("#members tbody tr td").hover(function() {
+	$("#members tbody tr td a").hover(function() {
 		$(this).children('article').slideToggle(600);
 	});
 
 	var index = 0;
 	var open = false;
+	var firstTime = true;
 
 	$(".switch").click(function () {
 		if($(this).hasClass("left")) {
@@ -167,22 +166,38 @@ function main(){
 			index = (index + 1) % srcs.length;
 			$("#images").hide().attr("src", srcs[index]).fadeIn(500);//.removeClass('animated jello').show().addClass('animated jello');
 		} else {
-			$('#img-gallery').slideToggle();
 			open = !open;
+			if (firstTime) {
+				for(var i=0; i < numImages; i++){
+					$("#img-gallery").append("<img src=\'" + path + i + '.jpg' + "\' class=\'imgs\'>");
+				}
+			}
+			$('#img-gallery').slideToggle();
 			$(".down.switch img").hide().attr("src", (open) ? "img/icons/arrow-up.png" : "img/icons/arrow-down.png").fadeIn();
 		}
 	});
 
+	var titles = ['Splash!','First GBM Fall 2017', 'First GBM Fall 2017', 'Tommy', 'Agganis Clean Up', 'Agganis Clean Up', 'Dinner and Boba Mentorship Event']
 
 	$(document).on('click', '.imgs', function() {
 		var source = $(this).attr('src');
-		var text = '<h1>Image Title</h1><br><p>Caption with information about the picture.</p>';
+		var num = source[13]
+		console.log(source[13])
+		var text = '<h1>'+titles[num]+'</h1><br><p></p>';
 		$('.zoom').remove();
 		$('body').append("<section class=\'zoom zoom-cont flex\'><img src='" + source + "\' class=\'zoom\'><article>" + text + "</article></section>");
 	});
 
 	$(document).on('click', '.zoom', function() {
 		$('.zoom').remove();
+	});
+
+	$("#feedback-btn").click(function () {
+		$('#feedback').toggle();
+	});
+
+	$("#feedback h2").click(function () {
+		$('#feedback').toggle();
 	});
 };
 

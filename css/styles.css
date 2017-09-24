@@ -384,15 +384,16 @@ Members rgba(0,72,110,0.5)
 */
 
 .main-box.members {
-	background: linear-gradient(rgba(49,180,224, 0.5), rgba(49,180,224, 0.5)),
-				url('../img/stone.jpg');
-	background-size: cover;
+	background-color: white;
 }
 
 #members {
-	margin: 50px auto 0 auto;
+	margin: 0 auto 50px auto;
 	padding-bottom: 5%;
 	min-width: 800px;
+	background: linear-gradient(rgba(49,180,224, 0.5), rgba(49,180,224, 0.5)),
+				url('../img/stone.jpg');
+	background-size: cover;
 }
 
 #members tbody tr {
@@ -418,13 +419,13 @@ tbody tr#last-row {
 	width: 20%;
 }
 
-#members tbody tr td img {
+#members tbody tr td a img {
 	width: 100%;
 	border: 5px solid white;
 	border-radius: 10px;
 }
 
-#members tbody tr td article {
+#members tbody tr td a article {
 	display: none;
 	position: absolute;
 	padding-top: 50px;
@@ -433,6 +434,28 @@ tbody tr#last-row {
 	border: 5px solid white;
 	border-width: 15px 5px;
 	border-radius: 10px;
+}
+
+article#desc {
+	display: block;
+	background-color: white;
+}
+
+article#desc h2, article#desc p {
+	display: block;
+	margin-bottom: 20px;
+	padding-left: 80px;
+	padding-right: 80px;
+	color: rgb(49,180,224);
+}
+
+article#desc p {
+	padding-bottom: 20px;
+}
+
+article#desc p:hover {
+	background-color: orange;
+	color: white;
 }
 
 /*
@@ -514,7 +537,7 @@ Gallery
 #images {
 	display: block;
 	max-width: 1408px;
-	max-height: 800px;
+	max-height: 500px;
 	max-width: 100%;
 	height: auto;
 }
@@ -590,10 +613,23 @@ Contact
 	padding: 0;
 }
 
+#feedback h2 {
+	display: block;
+	text-align: center;
+}
+
+#feedback h2:hover {
+	cursor: pointer;
+}
+
+#form {
+}
+
 #feedback {
 	position: absolute;
-	top:0;bottom:0;right:0;left:0; 
-	max-height: 80%;
+	top:120px;bottom:200px;right:0;left:0; 
+	width: 500px;
+	max-height: 800px;
 	margin: auto;
 	display: none;
 }
@@ -606,13 +642,18 @@ Contact
 #join-us, article.description {
 	margin: auto;
 	padding: 20px 0;
+	max-width: 500px;
 	border: 5px dashed white;
 	border-width: 5px 0;
-	min-height: 600px;
+	min-height: 500px;
 }
 
 a#feedback-btn {
 	display: block;
 	cursor: pointer;
-	border: 3px solid white;
+	margin-top: 50px;
+}
+
+#feedback-btn h2:hover {
+	color: orange;
 }
