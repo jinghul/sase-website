@@ -73,7 +73,7 @@ function main(){
 	notFull();
 
 
-	var numImages = 7;
+	var numImages = 19;
 	var srcs =[];
 
 
@@ -171,17 +171,22 @@ function main(){
 				for(var i=0; i < numImages; i++){
 					$("#img-gallery").append("<img src=\'" + path + i + '.jpg' + "\' class=\'imgs\'>");
 				}
+				firstTime = false;
 			}
 			$('#img-gallery').slideToggle();
 			$(".down.switch img").hide().attr("src", (open) ? "img/icons/arrow-up.png" : "img/icons/arrow-down.png").fadeIn();
 		}
 	});
 
-	var titles = ['Splash!','First GBM Fall 2017', 'First GBM Fall 2017', 'Tommy', 'Agganis Clean Up', 'Agganis Clean Up', 'Dinner and Boba Mentorship Event']
+	var titles = ['Splash!','First GBM Fall 2017', 'First GBM Fall 2017', 'Tommy', 'Agganis Clean Up', 'Agganis Clean Up', 'Dinner and Boba Mentorship Event', 'Second GBM Fall 2017','Second GBM After Party','Our Less Serious Side','SASE National Conference','Jing Gets a Job',
+		'SASE Spirit Week','SASE takes on Rhetts challenge','SASE Learns Suturing', 'SASE Eats More', 'SASE Sunrise Hike', 'SASE Sunrise Hike', 'SASE Plays Volleyball'];
 
 	$(document).on('click', '.imgs', function() {
 		var source = $(this).attr('src');
-		var num = source[13]
+		var num = '' + source[13] + source[14];
+		if(num[1] == '.') {
+			num = num[0]
+		}
 		console.log(source[13])
 		var text = '<h1>'+titles[num]+'</h1><br><p></p>';
 		$('.zoom').remove();

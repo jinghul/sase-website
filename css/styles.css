@@ -316,7 +316,7 @@ Calendar rgba(49,180,224, 0.8)url("../img/boston.jpg");
 	padding: 0% 2% 2% 2%;
 	margin: 3% 2% 0 0;
 	max-width: 1500px;
-	min-width: 450px;
+	min-width: 425px;
 	/*background: rgba(168,25,25, 0.6);*/
 	border-radius: 10px;
 	float: left;
@@ -456,6 +456,10 @@ article#desc p {
 article#desc p:hover {
 	background-color: orange;
 	color: white;
+}
+
+.hidd {
+	visibility: hidden;
 }
 
 /*
@@ -652,8 +656,10 @@ a#feedback-btn {
 	display: block;
 	cursor: pointer;
 	margin-top: 50px;
+	border: 4px solid white;
+	text-align: center;
 }
 
 #feedback-btn h2:hover {
-	color: orange;
+	background-color: orange;
 }
